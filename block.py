@@ -1,18 +1,23 @@
 import pygame
 
 class Block(pygame.sprite.DirtySprite):
+    defaultHealing = 0
+    maxHealth = 100
     def __init__(self,position,health=100):
         super().__init__()
-        self.image = self.skin
         self.rect = self.image.get_rect(center=position)
         self.position = position
-        self.health = health
+        self.currentHealth = self.maxHealth
 
 class Wood(Block):
-    skin = pygame.image.load('images/blocks/wood.png')
+    image = pygame.image.load('images/blocks/wood.png')
+    maxHealth = 100
 
 class Stone(Block):
-    skin = pygame.image.load('images/blocks/stone.png')
+    image = pygame.image.load('images/blocks/stone.png')
+    maxHealth = 500
 
 class Dirt(Block):
-    skin = pygame.image.load('images/blocks/dirt.png')
+    image = pygame.image.load('images/blocks/dirt.png')
+    maxHealth = 50
+    defaultHealing = 1
