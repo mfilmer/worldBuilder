@@ -6,7 +6,7 @@ import sys
 
 import pygame
 from dwarf import Dwarf
-from block import Wood
+from block import Wood,Stone,Dirt
 import ai
 
 screen = pygame.display.set_mode((640,480))
@@ -18,8 +18,11 @@ background = 255, 255, 255
 # Create the world
 worldBlocks = pygame.sprite.Group()
 for x in range(0,640,25):
-    for y in range (55,400,25):
-        newBlock = Wood((x,y))
+    for y in range(50,100,25):
+        newBlock = Dirt((x,y))
+        worldBlocks.add(newBlock)
+    for y in range(100,400,25):
+        newBlock = Stone((x,y))
         worldBlocks.add(newBlock)
 
 # Create the Dwarves
