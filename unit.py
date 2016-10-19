@@ -6,6 +6,13 @@ class Unit(pygame.sprite.DirtySprite):
         self.setSkin(newSkin)
         self.health = health
     
+    def deltamove(self,deltapos):
+        dx,dy = deltapos
+        self.rect.move_ip(dx,dy)
+    
+    def setAi(self,aiClass):
+        self.ai = aiClass(self)
+    
     def draw(self):
         # Only need to draw if there is actually a skin
         if skin is not None:
