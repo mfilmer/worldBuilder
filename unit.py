@@ -13,11 +13,6 @@ class Unit(pygame.sprite.DirtySprite):
     def setAi(self,aiClass):
         self.ai = aiClass(self)
     
-    def draw(self):
-        # Only need to draw if there is actually a skin
-        if skin is not None:
-            pass
-    
     def setSkin(self,newSkin):
         if newSkin is None:
             self.image = None
