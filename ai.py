@@ -1,7 +1,8 @@
-from abc import ABC, abstractmethod
+from abc import ABCMeta, abstractmethod
 import random
 
-class Ai(ABC):
+class Ai(object):
+    __metaclass__ = ABCMeta
     def __init__(self,unit):
         self.unit = unit
     
@@ -11,7 +12,7 @@ class Ai(ABC):
 
 class Wander(Ai):
     def __init__(self,unit):
-        super().__init__(unit)
+        Ai.__init__(self,unit)
         self.velocity = [0, 0]
         random.seed()
         self.randstate = random.getstate()

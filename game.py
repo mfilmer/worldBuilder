@@ -17,11 +17,11 @@ background = 255, 255, 255
 
 # Create the world
 worldBlocks = pygame.sprite.Group()
-for x in range(0,640,25):
-    for y in range(50,100,25):
+for x in range(0,640,10):
+    for y in range(50,100,10):
         newBlock = Dirt((x,y))
         worldBlocks.add(newBlock)
-    for y in range(100,400,25):
+    for y in range(100,400,10):
         newBlock = Stone((x,y))
         worldBlocks.add(newBlock)
 

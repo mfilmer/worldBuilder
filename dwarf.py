@@ -2,7 +2,7 @@ import unit
 
 class Dwarf(unit.Unit):
     def __init__(self):
-        super().__init__()
+        unit.Unit.__init__(self)
         self.name = "Dwarf1"
         self.ai = None
     

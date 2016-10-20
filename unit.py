@@ -2,7 +2,7 @@ import pygame.sprite
 
 class Unit(pygame.sprite.DirtySprite):
     def __init__(self,newSkin=None,health=100):
-        super().__init__()
+        pygame.sprite.DirtySprite.__init__(self)
         self.setSkin(newSkin)
         self.health = health
     
